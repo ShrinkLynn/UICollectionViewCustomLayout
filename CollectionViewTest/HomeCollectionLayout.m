@@ -56,9 +56,13 @@
 - (void)prepareLayout {
     [super prepareLayout];
     
+    //reload的时候清空原有数据
     [_array removeAllObjects];
     [_arrOfSize removeAllObjects];
     [_arrOfSectionHeight removeAllObjects];
+    _collectionSizeHeight = 0;
+    _itemCount = 0;
+    
     NSInteger sectionCount = [self.collectionView numberOfSections];
     //根据每个indexPath储存
     for (NSInteger i = 0 ; i < sectionCount; i++) {
